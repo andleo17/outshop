@@ -13,10 +13,11 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 		<span class="navbar-brand mb-0 h1">OutShop</span>
 		<div class="menu">
-			<i class="fas fa-shopping-cart"><span id="cantidad">0</span></i>
+			<i class="fas fa-shopping-cart" data-toggle="modal" data-target="#confirmacion"><span
+					id="cantidad">0</span></i>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -75,6 +76,47 @@
 						Eliminar de carrito
 					</button>
 				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="confirmacion" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">
+						Confirmación de compra
+					</h5>
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="table">
+						<thead>
+							<th>Nombre</th>
+							<th>Precio</th>
+						</thead>
+						<tbody id="confirmacionCuerpo">
+
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">
+						Cancelar
+					</button>
+					<button id="btnConfirmar" type="button" class="btn btn-success" data-dismiss="modal"
+						data-toggle="modal" data-target="#listo">
+						Confirmar
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="listo" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content text-center">
+				<h1>Compra exitosa</h1>
 			</div>
 		</div>
 	</div>

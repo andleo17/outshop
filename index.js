@@ -36,6 +36,10 @@ class Producto {
 
 let carrito = [];
 
+if (localStorage.getItem('carrito') != null) {
+	carrito = JSON.parse(localStorage.getItem('carrito'));
+}
+
 let categorias = [
 	new Categoria(0, 'Ropa para mujeres'),
 	new Categoria(1, 'Ropa para hombres'),
@@ -222,7 +226,7 @@ function mostrarDetalles(id) {
 	$btnAgregarCarrito.setAttribute('data-id', id);
 	let $btnEliminarCarrito = document.getElementById('btnEliminarCarrito');
 	$btnEliminarCarrito.setAttribute('data-id', id);
-	if (carrito.findIndex(p => p.id === id) == -1) {
+	if (carrito.findIndex(p => p.id == id) == -1) {
 		mostrar('btnAgregarCarrito');
 		ocultar('btnEliminarCarrito');
 	} else {
@@ -239,8 +243,7 @@ function agregarCarrito(id) {
 }
 
 function eliminarCarrito(id) {
-	let producto = productos.find(p => p.id == id);
-	carrito.splice(carrito.indexOf(producto), 1);
+	carrito.splice(carrito.findIndex(p => p.id == id), 1);
 	$('#detalle').modal('hide');
 	actualizarCarrito();
 }
@@ -255,7 +258,34 @@ function ocultar(elemento) {
 
 function actualizarCarrito() {
 	localStorage.setItem('carrito', JSON.stringify(carrito));
+	mostrarCarrito();
+}
+
+function mostrarCarrito() {
 	document.getElementById('cantidad').innerText = carrito.length;
+	let $confirmacionCuerpo = document.getElementById('confirmacionCuerpo');
+	let html = '';
+	carrito.forEach(p => {
+		html += `
+			<tr>
+				<td>${p.nombre}</td>
+				<td>${p.precio}</td>
+			</tr>
+		`;
+	});
+	let total = 0;
+	if (carrito.length == 1) {
+		total = carrito[0].precio;
+	} else if (carrito.length > 1) {
+		total = carrito.reduce((p1, p2) => p1.precio + p2.precio);
+	}
+	html += `
+		<tr>
+			<th>Total</th>
+			<td>${total}</td>
+		</tr>
+	`;
+	$confirmacionCuerpo.innerHTML = html;
 }
 
 document.getElementById('btnAgregarCarrito').onclick = evt =>
@@ -271,7 +301,4 @@ document.getElementById('txtBuscar').oninput = evt => {
 listarMarcas();
 listarCategorias();
 listarProductos(productos);
-
-if (localStorage.getItem('carrito') != null) {
-	carrito = JSON.parse(localStorage.getItem('carrito'));
-}
+mostrarCarrito();
