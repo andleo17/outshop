@@ -1,14 +1,16 @@
 class Categoria {
-	constructor(id, nombre) {
+	constructor(id, nombre, descripcion) {
 		this.id = id;
 		this.nombre = nombre;
+		this.descripcion = descripcion;
 	}
 }
 
 class Marca {
-	constructor(id, nombre) {
+	constructor(id, nombre, foto) {
 		this.id = id;
 		this.nombre = nombre;
+		this.foto = foto;
 	}
 }
 
@@ -41,19 +43,59 @@ if (localStorage.getItem('carrito') != null) {
 }
 
 let categorias = [
-	new Categoria(0, 'Ropa para mujeres'),
-	new Categoria(1, 'Ropa para hombres'),
-	new Categoria(2, 'Ropa para niños')
+	new Categoria(
+		0,
+		'Ropa para mujeres',
+		'En Outshop encontrarás la mejor moda para mujeres. Lúcete con nuestra increíble variedad de ropa.'
+	),
+	new Categoria(
+		1,
+		'Ropa para hombres',
+		'Encuentra lo mejor en ropa para hombres en OutShop. Demuestra que tienes buen gusto adquiriendo algo de nuestro catálogo.'
+	),
+	new Categoria(
+		2,
+		'Ropa para niños',
+		'Regala por esta navidad ropa para tu hijo. Para qué comprarle juguetes a tu hijo si puedes comprarle ropa. Aquí en OutShop te ofrecemos una gran variedad de ropa para niños.'
+	)
 ];
 
 let marcas = [
-	new Marca(0, 'Newport'),
-	new Marca(1, 'Basement'),
-	new Marca(2, 'University Club'),
-	new Marca(3, 'Christian Lacroix'),
-	new Marca(4, 'J.Crew'),
-	new Marca(5, 'Billabong'),
-	new Marca(6, 'Tommy Hilfiger')
+	new Marca(
+		0,
+		'Vans',
+		'https://i.pinimg.com/originals/1a/4e/3a/1a4e3a121b8883ffea739c8b4704bb7b.jpg'
+	),
+	new Marca(
+		1,
+		'Basement',
+		'https://pack-arte.com.ar/wp-content/uploads/2018/02/basement-logo-2.jpg'
+	),
+	new Marca(
+		2,
+		'University Club',
+		'https://m.universidadperu.com/imgmarca/2006-296672.gif'
+	),
+	new Marca(
+		3,
+		'Christian Lacroix',
+		'https://www.moooicarpets.com/wp-content/uploads/2015/04/ChristianLacroix.jpg'
+	),
+	new Marca(
+		4,
+		'J.Crew',
+		'https://www.littlerock.com/images/default-source/destinations/shopping-images/j-crew-logo-560x400.tmb-detailitem.jpg?sfvrsn=233e8db6_1'
+	),
+	new Marca(
+		5,
+		'Billabong',
+		'https://upload.wikimedia.org/wikipedia/commons/a/a2/BBG_Logo_Wave_Icon.jpg'
+	),
+	new Marca(
+		6,
+		'Tommy Hilfiger',
+		'https://logosmarcas.com/wp-content/uploads/2018/03/Tommy-Hilfiger-logo.png'
+	)
 ];
 
 let productos = [
@@ -72,7 +114,7 @@ let productos = [
 		'Chompa Roja',
 		105.89,
 		marcas[1],
-		categorias[1],
+		categorias[0],
 		'Verde',
 		3.5,
 		'https://falabella.scene7.com/is/image/FalabellaPE/881469618?wid=423&hei=423&qlt=70&crop=0,0,0,0'
@@ -92,7 +134,7 @@ let productos = [
 		'Chompa verde',
 		95.99,
 		marcas[2],
-		categorias[1],
+		categorias[0],
 		'Verde',
 		3.5,
 		'https://falabella.scene7.com/is/image/FalabellaPE/881469618?wid=423&hei=423&qlt=70&crop=0,0,0,0'
@@ -133,7 +175,7 @@ function listarMarcas() {
 	let $marcas = document.getElementById('marcas');
 	let html = '';
 	marcas.forEach(m => {
-		html += `<a class="dropdown-item" href="#">${m.nombre}</a>`;
+		html += `<a class="dropdown-item" href="marca.html?id=${m.id}">${m.nombre}</a>`;
 	});
 	$marcas.innerHTML = html;
 }
@@ -142,7 +184,7 @@ function listarCategorias() {
 	let $categorias = document.getElementById('categorias');
 	let html = '';
 	categorias.forEach(c => {
-		html += `<a class="dropdown-item" href="#">${c.nombre}</a>`;
+		html += `<a class="dropdown-item" href="categoria.html?id=${c.id}">${c.nombre}</a>`;
 	});
 	$categorias.innerHTML = html;
 }
@@ -243,7 +285,10 @@ function agregarCarrito(id) {
 }
 
 function eliminarCarrito(id) {
-	carrito.splice(carrito.findIndex(p => p.id == id), 1);
+	carrito.splice(
+		carrito.findIndex(p => p.id == id),
+		1
+	);
 	$('#detalle').modal('hide');
 	actualizarCarrito();
 }
@@ -259,6 +304,11 @@ function ocultar(elemento) {
 function actualizarCarrito() {
 	localStorage.setItem('carrito', JSON.stringify(carrito));
 	mostrarCarrito();
+}
+
+function limpiarCarrito() {
+	carrito = [];
+	actualizarCarrito();
 }
 
 function mostrarCarrito() {
