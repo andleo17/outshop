@@ -101,73 +101,263 @@ let marcas = [
 let productos = [
 	new Producto(
 		0,
-		'Chompa verde',
-		95.99,
-		marcas[0],
+		'Polos Tommy Hilfiger Edición Limitada',
+		69.0,
+		marcas[6],
 		categorias[1],
-		'Verde',
-		3.5,
-		'https://falabella.scene7.com/is/image/FalabellaPE/881469618?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+		'Azul',
+		4.5,
+		'https://http2.mlstatic.com/polos-tommy-hilfiger-edicion-limitada-D_NQ_NP_700541-MPE31591773767_072019-O.webp'
 	),
 	new Producto(
 		1,
-		'Chompa Roja',
-		105.89,
-		marcas[1],
-		categorias[0],
-		'Verde',
-		3.5,
-		'https://falabella.scene7.com/is/image/FalabellaPE/881469618?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+		'Chompa Polo Tommy Hilfiger Original Nuevo Modelo Ralph',
+		85.0,
+		marcas[6],
+		categorias[1],
+		'Negro',
+		3,
+		'https://http2.mlstatic.com/chompa-polo-tommy-hilfiger-original-nuevo-modelo-ralph-D_NQ_NP_797953-MPE32067817993_092019-F.webp'
 	),
 	new Producto(
 		2,
-		'Chompa Morada',
+		'Polos Tommy Hilfiger Importado Mulberry Place Talla S-m',
+		100,
+		marcas[6],
+		categorias[1],
+		'Verde',
+		1,
+		'https://http2.mlstatic.com/polos-tommy-hilfiger-importado-mulberry-place-talla-s-m-D_NQ_NP_969375-MPE31255311796_062019-O.webp'
+	),
+	new Producto(
+		3,
+		'Hermoso Polo Tommy Hilfiger 100% Original Importado De Usa',
+		120,
+		marcas[6],
+		categorias[0],
+		'Blanco',
+		5,
+		'https://http2.mlstatic.com/hermoso-polo-tommy-hilfiger-100-original-importado-de-usa-D_NQ_NP_931010-MPE32848755159_112019-F.webp'
+	),
+	new Producto(
+		4,
+		'Camisa',
+		99,
+		marcas[1],
+		categorias[1],
+		'Azul',
+		5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881512501?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		5,
+		'Polo',
 		95.99,
 		marcas[1],
 		categorias[1],
 		'Verde',
-		3.5,
-		'https://falabella.scene7.com/is/image/FalabellaPE/881469618?wid=423&hei=423&qlt=70&crop=0,0,0,0'
-	),
-	new Producto(
-		3,
-		'Chompa verde',
-		95.99,
-		marcas[2],
-		categorias[0],
-		'Verde',
-		3.5,
-		'https://falabella.scene7.com/is/image/FalabellaPE/881469618?wid=423&hei=423&qlt=70&crop=0,0,0,0'
-	),
-	new Producto(
-		4,
-		'Chompa verde',
-		95.99,
-		marcas[3],
-		categorias[1],
-		'Verde',
-		3.5,
-		'https://falabella.scene7.com/is/image/FalabellaPE/881469618?wid=423&hei=423&qlt=70&crop=0,0,0,0'
-	),
-	new Producto(
-		5,
-		'Chompa verde',
-		95.99,
-		marcas[4],
-		categorias[1],
-		'Verde',
-		3.5,
-		'https://falabella.scene7.com/is/image/FalabellaPE/881469618?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+		2.5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881661239?wid=423&hei=423&qlt=70&crop=0,0,0,0'
 	),
 	new Producto(
 		6,
-		'Chompa verde',
+		'Polo blanco',
+		39.9,
+		marcas[2],
+		categorias[0],
+		'Blanco',
+		3.5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881575379?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		7,
+		'Polo con decoración',
+		29.9,
+		marcas[2],
+		categorias[0],
+		'Blanco',
+		3.5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881664605?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		8,
+		'Polo blanco',
+		34.9,
+		marcas[2],
+		categorias[0],
+		'Blanco',
+		4,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881664324?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		9,
+		'Vestido negro',
+		95.99,
+		marcas[3],
+		categorias[2],
+		'Negro',
+		3.5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881493481?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		10,
+		'Enterizo',
+		39.9,
+		marcas[0],
+		categorias[2],
+		'Rosa',
+		2.5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881634945?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		11,
+		'Vestido fiesta',
+		59.9,
+		marcas[6],
+		categorias[2],
+		'Blanco',
+		3.5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881647417?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		12,
+		'Vestido flona',
+		69.9,
+		marcas[0],
+		categorias[2],
+		'Negro',
+		1,
+		'https://falabella.scene7.com/is/image/FalabellaPE/16955022?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		13,
+		'Polo gris',
+		19.9,
+		marcas[1],
+		categorias[2],
+		'Gris',
+		1.5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881638270?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		14,
+		'Polo básico',
 		95.99,
 		marcas[5],
-		categorias[1],
-		'Verde',
+		categorias[2],
+		'Negro',
+		5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881490788?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		15,
+		'Camisa con flores',
+		49.9,
+		marcas[4],
+		categorias[2],
+		'Roja',
 		3.5,
-		'https://falabella.scene7.com/is/image/FalabellaPE/881469618?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+		'https://falabella.scene7.com/is/image/FalabellaPE/881638930?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		16,
+		'Polo universo',
+		50.9,
+		marcas[3],
+		categorias[1],
+		'Morado',
+		5,
+		'https://cdn.shopify.com/s/files/1/2165/0371/products/man_font_f9b672ee-a4b8-4876-aadc-df4711c21e10.png?v=1555562092'
+	),
+	new Producto(
+		17,
+		'Polo anime',
+		124.9,
+		marcas[6],
+		categorias[1],
+		'Blanco',
+		5,
+		'https://http2.mlstatic.com/polo-ahegao-D_NQ_NP_802843-MPE33019090291_112019-Q.jpg'
+	),
+	new Producto(
+		18,
+		'Polo de Fortnite',
+		27.6,
+		marcas[4],
+		categorias[2],
+		'Blanco',
+		3.5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881561526?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		19,
+		'Polo degree',
+		39.9,
+		marcas[4],
+		categorias[2],
+		'Negro',
+		4.5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/16981464?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		20,
+		'Polo Fortnite',
+		27.6,
+		marcas[0],
+		categorias[2],
+		'Morada',
+		5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881561529?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		21,
+		'Polo verde con flores',
+		29.9,
+		marcas[4],
+		categorias[2],
+		'Verde',
+		5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881638709?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		22,
+		'Camisa negra',
+		35.6,
+		marcas[3],
+		categorias[2],
+		'Negra',
+		3.5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881499185?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		23,
+		'Polo celeste',
+		31.4,
+		marcas[4],
+		categorias[0],
+		'Celeste',
+		4,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881575654?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		24,
+		'Polo gris',
+		21.99,
+		marcas[3],
+		categorias[0],
+		'Gris',
+		5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881664344?wid=423&hei=423&qlt=70&crop=0,0,0,0'
+	),
+	new Producto(
+		25,
+		'Polo blanco',
+		37.9,
+		marcas[4],
+		categorias[0],
+		'Blanco',
+		3.5,
+		'https://falabella.scene7.com/is/image/FalabellaPE/881664328?wid=423&hei=423&qlt=70&crop=0,0,0,0'
 	)
 ];
 
