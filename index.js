@@ -433,10 +433,14 @@ function mostrarValoracion(producto) {
 }
 
 function buscarProductos(nombre) {
-	if (nombre == '') {
+	if (nombre == ''.toUpperCase) {
 		listarProductos(productos);
 	} else {
-		listarProductos(productos.filter(p => p.nombre.includes(nombre)));
+		listarProductos(
+			productos.filter(p =>
+				p.nombre.toUpperCase().includes(nombre.toUpperCase())
+			)
+		);
 	}
 }
 
